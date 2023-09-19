@@ -5,12 +5,16 @@ from logging import Logger
 from uuid import uuid4
 
 import requests
-
-from pyfinnotech.const import URL_SANDBOX, URL_MAINNET, ALL_SCOPE_CLIENT_CREDENTIALS, ALL_SCOPE_AUTHORIZATION_TOKEN
-from pyfinnotech.responses import IbanInquiryResponse, CardInquiryResponse, StandardReliabilitySms, \
-    NationalIdVerification, CardToIbanResponse
-from pyfinnotech.token import ClientCredentialToken, Token, FacilitySmsAccessTokenToken
-from pyfinnotech.exceptions import FinnotechException, FinnotechHttpException
+from const import ALL_SCOPE_AUTHORIZATION_TOKEN, ALL_SCOPE_CLIENT_CREDENTIALS, URL_MAINNET, URL_SANDBOX
+from exceptions import FinnotechException, FinnotechHttpException
+from pyfinnotech.token import ClientCredentialToken, FacilitySmsAccessTokenToken, Token
+from responses import (
+    CardInquiryResponse,
+    CardToIbanResponse,
+    IbanInquiryResponse,
+    NationalIdVerification,
+    StandardReliabilitySms,
+)
 
 
 class FinnotechApiClient:
